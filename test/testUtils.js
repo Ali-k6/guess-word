@@ -15,7 +15,7 @@ export const checkProps = (component, conformingProps) => {
   const propsError = checkPropTypes(
     component.propTypes,
     conformingProps,
-    'props',
+    'prop',
     component.name
   );
 
