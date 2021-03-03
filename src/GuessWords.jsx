@@ -9,8 +9,8 @@ const GuessWords = ({ guessWords }) => {
       ) : (
         <div data-test='guessed-words'>
           <h3>Guessed Words</h3>
-          <table>
-            <thead>
+          <table className='table table-striped table-hover'>
+            <thead className='table-light'>
               <tr>
                 <th>Guess</th>
                 <th>Matching Letters</th>
