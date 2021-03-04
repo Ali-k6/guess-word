@@ -5,10 +5,12 @@
  * @returns {boolean} - new success state
  */
 
-const successReducer = (state = [], action) => {
+import { actionTypes } from '../actions';
+
+const successReducer = (state = false, action) => {
   switch (action.type) {
-    case 'value':
-      break;
+    case actionTypes.CORRECT_GUESS:
+      return true;
 
     default:
       return state;
