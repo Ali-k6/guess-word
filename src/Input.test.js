@@ -1,4 +1,5 @@
 import { shallow } from 'enzyme';
+import { exact } from 'prop-types';
 import { findByTestAttr, storeFactory } from '../test/testUtils';
 import { Input } from './Input';
 
@@ -17,11 +18,26 @@ const setup = (initialState = {}) => {
 setup();
 describe('render', () => {
   describe('word has not been guessed', () => {
-    test('render the component without error', () => {});
+    let wrapper;
+    beforeEach(() => {
+      const initialState = { success: false };
+      wrapper = setup(initialState);
+    });
 
-    test('render the input box', () => {});
+    test('render the component without error', () => {
+      const component = findByTestAttr(wrapper, 'component-input');
+      expect(component.length).toBe(1);
+    });
 
-    test('render submit button', () => {});
+    test('render the input box', () => {
+      const inputBox = findByTestAttr(wrapper, 'input-box');
+      expect(inputBox.length).toBe(1);
+    });
+
+    test('render submit button', () => {
+      const submitButton = findByTestAttr(wrapper, 'submit-button');
+      expect(submitButton.length).toBe(1);
+    });
   });
 
   describe('word has been guessed', () => {
